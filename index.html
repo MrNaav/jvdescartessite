@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria de Descarte</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula o arquivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>Consultoria de Descarte</h1>
+    </header>
+    <main>
+        <section id="adicionar-itens">
+            <h2>Adicionar Itens</h2>
+            <form id="form-adicionar-item">
+                <label for="nome">Nome do Item:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="riscos">Riscos do Item:</label>
+                <input type="text" id="riscos" name="riscos">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="4"></textarea>
+                <label for="locais">Locais para Descarte:</label>
+                <input type="text" id="locais" name="locais">
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+        <section id="consulta-itens">
+            <h2>Consulta de Itens</h2>
+            <form id="form-consulta-item">
+                <label for="id">ID do Item:</label>
+                <input type="text" id="id" name="id">
+                <button type="submit">Consultar</button>
+                <label for="nome-consulta">Nome do Item:</label>
+                <input type="text" id="nome-consulta" name="nome-consulta">
+                <button type="submit">Consultar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
