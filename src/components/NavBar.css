@@ -1,0 +1,40 @@
+/* src/components/NavBar.css */
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #4682b4; /* Azul-aco */
+    padding-top: 20px;
+    padding-bottom: 20px; /* Adicionando padding abaixo dos atalhos */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Para centralizar verticalmente */
+    flex-direction: column; /* Para centralizar verticalmente */
+    justify-content: center; /* Para centralizar verticalmente */
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px; /* Ajuste o espaçamento acima dos atalhos */
+}
+
+.nav-bar li {
+    margin-bottom: 20px; /* Ajuste o espaçamento entre os atalhos */
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    text-align: center; /* Centralize os textos dos atalhos */
+}
+
+.nav-bar a:hover {
+    background-color: #357ebd; /* Azul-aco mais escuro */
+    border-radius: 5px;
+}

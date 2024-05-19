@@ -1,0 +1,42 @@
+/* src/components/AdicionarItens.css */
+
+#adicionar-itens {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#adicionar-itens h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#adicionar-itens label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#adicionar-itens input[type="text"],
+#adicionar-itens textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#adicionar-itens button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4682b4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#adicionar-itens button:hover {
+    background-color: #357ebd;
+}

@@ -1,0 +1,11 @@
+/* src/components/Header.css */
+header {
+    background-color: #4682b4; /* Azul-aco */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
