@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdicionarItens.css';
+import axios from 'axios';
 
 const AdicionarItens = () => {
     const [nome, setNome] = useState('');
@@ -11,14 +12,12 @@ const AdicionarItens = () => {
     useEffect(() => {
         const fetchLocalidades = async () => {
             try {
-                const response = await fetch('http://localhost:3000/localidades');
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar localidades');
-                }
-                const data = await response.json();
+                const response = await axios.get('http://localhost:3000/localidades');
+
+                const data = response.data;
                 setLocalidades(data);
             } catch (error) {
-                console.error('Erro:', error);
+                console.error('Erro ao buscar localidades:', error);
             }
         };
 
@@ -29,26 +28,29 @@ const AdicionarItens = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/item_descarte', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    nome,
-                    riscos,
-                    descricao,
-                    localidade_id: selectedLocalidade
-                })
+            const response = await axios.post('http://localhost:3000/item_descarte', {
+                nome,
+                riscos,
+                descricao,
             });
 
-            if (!response.ok) {
-                throw new Error('Erro ao adicionar item de descarte');
+            if (response.status !== 201) {
+                throw new Error('Erro ao adicionar item!');
             }
 
-            alert('Item de descarte adicionado com sucesso!');
+            const itemId = response.data.id
+
+            const responseTwo = await axios.post('http://localhost:3000/local_item_descarte', {
+                idItemDescarte: itemId,
+                idLocalDescarte: selectedLocalidade,
+            });
+
+            if (responseTwo.status !== 201) {
+                throw new Error('Erro ao adicionar localidade ao item!');
+            }
+
+            alert('Item de descarte criado com sucesso!');
             
-            // Limpar campos após a adição bem-sucedida
             setNome('');
             setRiscos('');
             setDescricao('');
@@ -64,11 +66,11 @@ const AdicionarItens = () => {
             <h2>Adicionar Itens</h2>
             <form id="form-adicionar-item" onSubmit={handleSubmit}>
                 <label htmlFor="nome">Nome do Item:</label>
-                <input type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
+                <input type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required maxLength="30"/>
                 <label htmlFor="riscos">Riscos do Item:</label>
-                <input type="text" id="riscos" name="riscos" value={riscos} onChange={(e) => setRiscos(e.target.value)} />
+                <textarea type="text" id="riscos" name="riscos" value={riscos} onChange={(e) => setRiscos(e.target.value)} rows="2" required maxLength="200"></textarea>
                 <label htmlFor="descricao">Descrição:</label>
-                <textarea id="descricao" name="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} rows="4"></textarea>
+                <textarea id="descricao" name="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} rows="2" required maxLength="200"></textarea>
                 <label htmlFor="localidade">Localidades para Descarte:</label>
                 <select id="localidade" name="localidade" value={selectedLocalidade} onChange={(e) => setSelectedLocalidade(e.target.value)} className="select-css"required>
                     <option value="">Selecione...</option>
@@ -78,7 +80,7 @@ const AdicionarItens = () => {
                         </option>
                     ))}
                 </select>
-                <button type="submit">Adicionar</button>
+                <button type="submit">Add</button>
             </form>
         </section>
     );

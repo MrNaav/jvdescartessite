@@ -1,0 +1,27 @@
+/* ConsultaContatos.css */
+
+#consulta-contatos {
+    margin-top: 20px;
+}
+
+.contatos-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contato-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    background-color: #f9f9f9;
+}
+
+.contato-item p {
+    margin: 5px 0;
+}
+
+.contato-item p:first-child {
+    font-weight: bold;
+}
