@@ -11,7 +11,7 @@ const ResponderContatos = () => {
     useEffect(() => {
         const fetchContatos = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/contatos_consultoria');
+                const response = await axios.get('http://192.168.1.22:3000/contatos_consultoria');
                 setContatos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar contatos:', error);

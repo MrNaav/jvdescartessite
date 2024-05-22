@@ -9,7 +9,7 @@ const ConsultaItens = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await fetch('http://localhost:3000/itensdescarte');
+                const response = await fetch('http://192.168.1.22:3000/itensdescarte');
                 if (!response.ok) {
                     throw new Error('Erro ao buscar itens');
                 }

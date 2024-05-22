@@ -8,7 +8,7 @@ const ConsultaLocalidades = () => {
     useEffect(() => {
         const fetchLocalidades = async () => {
             try {
-                const response = await fetch('http://localhost:3000/localidades');
+                const response = await fetch('http://192.168.1.22:3000/localidades');
                 if (!response.ok) {
                     throw new Error('Erro ao buscar localidades');
                 }
