@@ -1,25 +1,43 @@
-// src/components/ConsultaItens.js
 import React, { useState, useEffect } from 'react';
 import './ConsultaItens.css';
 
 const ConsultaItens = () => {
     const [items, setItems] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [localidades, setLocalidades] = useState([]);
 
     useEffect(() => {
-        // Simulando o fetch dos itens. Em uma aplicação real, você buscaria isso de uma API
-        const fetchedItems = [
-            { id: 1, nome: 'Bateria', riscos: 'Contaminação do solo', descricao: 'Bateria de carro', locais: 'Posto de coleta' },
-            { id: 2, nome: 'Lâmpada', riscos: 'Corte, contaminação', descricao: 'Lâmpada fluorescente', locais: 'Posto de coleta' },
-            // Adicione mais itens conforme necessário
-        ];
-        setItems(fetchedItems);
+        const fetchItems = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/itensdescarte');
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar itens');
+                }
+                const data = await response.json();
+                setItems(data);
+            } catch (error) {
+                console.error('Erro:', error);
+            }
+        };
+
+        fetchItems();
     }, []);
 
-    const handleSelectChange = (e) => {
+    const handleSelectChange = async (e) => {
         const selectedItemId = e.target.value;
         const item = items.find(item => item.id === parseInt(selectedItemId));
         setSelectedItem(item);
+
+        try {
+            const response = await fetch(`http://localhost:3000/itensdescarte/${selectedItemId}/localidades`);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar localidades');
+            }
+            const data = await response.json();
+            setLocalidades(data);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
     };
 
     return (
@@ -35,12 +53,28 @@ const ConsultaItens = () => {
                 </select>
             </form>
             {selectedItem && (
-                <div id="item-info">
+                <div>
                     <h3>Informações do Item</h3>
-                    <p><strong>Nome:</strong> {selectedItem.nome}</p>
-                    <p><strong>Riscos:</strong> {selectedItem.riscos}</p>
-                    <p><strong>Descrição:</strong> {selectedItem.descricao}</p>
-                    <p><strong>Locais para Descarte:</strong> {selectedItem.locais}</p>
+                    <p><strong>Nome:</strong></p>
+                    <p>{selectedItem.nome}</p>
+                    <p><strong>Riscos:</strong></p>
+                    <p>{selectedItem.riscos}</p>
+                    <p><strong>Descrição:</strong></p>
+                    <p>{selectedItem.descricao}</p>
+                    <p><strong>Locais para Descarte:</strong></p>
+                    <p>{selectedItem.locais}</p>
+                </div>
+            )}
+            {localidades.length > 0 && (
+                <div>
+                        {localidades.map(localidade => (
+                            <div key={localidade.id}>
+                                <p>Nome: {localidade.nome}</p>
+                                <p>Endereço: {localidade.endereco.rua}, {localidade.endereco.numero}, {localidade.endereco.complemento}</p>
+                                <p>{localidade.endereco.bairro}, {localidade.endereco.cidade}, {localidade.endereco.estado}, {localidade.endereco.pais}</p>
+                                <p>Horário de Funcionamento: {localidade.horario_funcionamento}</p>
+                            </div>
+                        ))}
                 </div>
             )}
         </section>

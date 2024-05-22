@@ -1,0 +1,68 @@
+#adicionar-localidades select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #fff; /* Cor de fundo */
+    color: #333; /* Cor do texto */
+}
+
+#adicionar-localidades select:hover {
+    border-color: #4682b4; /* Cor da borda ao passar o mouse */
+}
+
+#adicionar-localidades select:focus {
+    outline: none; /* Remover o contorno ao focar */
+    border-color: #357ebd; /* Cor da borda ao focar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra ao focar */
+}
+
+#adicionar-localidades input,
+#adicionar-localidades textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #fff; /* Cor de fundo */
+    color: #333; /* Cor do texto */
+}
+
+#adicionar-localidades input:hover,
+#adicionar-localidades textarea:hover {
+    border-color: #4682b4; /* Cor da borda ao passar o mouse */
+}
+
+#adicionar-localidades input:focus,
+#adicionar-localidades textarea:focus {
+    outline: none; /* Remover o contorno ao focar */
+    border-color: #357ebd; /* Cor da borda ao focar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra ao focar */
+}
+
+#adicionar-localidades button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4682b4; /* Cor do fundo */
+    color: #fff; /* Cor do texto */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#adicionar-localidades button:hover {
+    background-color: #357ebd; /* Cor de fundo ao passar o mouse */
+}
+
+#adicionar-localidades h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#adicionar-localidades form {
+    max-width: 600px;
+    margin: 0 auto;
+}

@@ -1,5 +1,7 @@
 .page {
     display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
 }
 
 .content {
@@ -19,40 +21,96 @@
 
 .info-group label {
     font-weight: bold;
+    margin-right: 5px;
 }
 
-.info-group .highlight {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 3px 100px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
-}
-
-/* Estilos específicos para cada campo */
 .label-id {
-    width: 50px; /* Largura específica para o rótulo do ID */
+    width: 50px;
 }
 
 .label-nome {
-    width: 200px; /* Largura específica para o rótulo do Nome */
+    width: 200px;
 }
 
 .label-celular {
-    width: 70px; /* Largura específica para o rótulo do Celular */
+    width: 70px;
 }
 
 .label-email {
-    width: 60px; /* Largura específica para o rótulo do E-mail */
+    width: 60px;
 }
 
 .label-motivo {
-    width: 120px; /* Largura específica para o rótulo do Motivo do Contato */
+    width: 120px;
 }
 
 .label-detalhes {
-    width: 70px; /* Largura específica para o rótulo dos Detalhes */
+    width: 70px;
 }
+
+.id {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 3px 10px;
+    background-color: transparent;
+}
+
+.nome {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 3px 130px;
+    background-color: transparent;
+}
+
+.celular {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 3px 10px;
+    background-color: transparent;
+}
+
+.email {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 3px 100px;
+    background-color: transparent;
+}
+
+.motivo {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 50px 150px;
+    background-color: transparent;
+}
+
+.detalhes {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px; /* Ajustado para um valor mais razoável */
+    max-height: 150px; /* Altura máxima */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+    background-color: transparent;
+}
+
+.resposta-consultor {
+    width: 97%;
+    min-height: 100px;
+    max-width: 500px; /* Largura máxima fixa */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    background-color: transparent;
+    overflow-y: auto; /* Adicionar barra de rolagem vertical quando necessário */
+}
+
+
 
 .form-group {
     margin-bottom: 20px;
@@ -61,16 +119,17 @@
 .form-group label {
     display: block;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .form-group textarea {
-    width: 100%;
-    min-height: 150px; /* Altura mínima para o textarea */
-    padding: 20px 215px;
+    width: 97%;
+    min-height: 100px; /* Altura mínima para o textarea */
+    padding: 10px;
     border-radius: 5px; /* Bordas arredondadas */
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Cor preta com transparência e largura fina */
     box-sizing: border-box;
-    background-color: transparent; /* Sem cor de fundo */
+    background-color: transparent; /* Fundo transparente */
 }
 
 .contatos-list {
@@ -80,84 +139,31 @@
 
 .contatos-list li {
     margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.contatos-list .highlight {
-    display: inline-block;
-    min-width: 150px; /* Largura mínima para os campos de valor */
-    max-width: 300px; /* Largura máxima para os campos de valor */
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 5px 10px;
-    background-color: transparent; /* Sem cor de fundo */
+.contatos-list li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Estilos específicos para cada campo */
-.id {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 3px 25px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
-}
-
-.nome {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 3px 110px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
-}
-
-.celular {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 3px 25px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
-}
-
-.email {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 3px 110px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
-}
-
-.motivo {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 20px 150px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
-}
-
-.detalhes {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    background-color: transparent; /* Sem cor de fundo */
-    min-height: 60px; /* Altura mínima para o textarea */
-    padding: 20px 215px; /* Reduzindo o preenchimento interno */
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    box-sizing: border-box;
-}
-
-/* Estilos específicos para cada campo na lista de contatos de clientes */
 .contatos-list .id {
     display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Cor preta com transparência e largura fina */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 3px 25px; /* Ajustando a margem interna da borda */
-    background-color: transparent; /* Sem cor de fundo */
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 3px 10px;
+    background-color: transparent;
 }
 
 .contatos-list .nome {
     display: inline-block;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    padding: 3px 110px;
+    padding: 3px 10px;
     background-color: transparent;
 }
 
@@ -165,6 +171,7 @@
     display: inline-block;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    padding: 20px 220px;
+    padding: 3px 10px;
     background-color: transparent;
 }
+

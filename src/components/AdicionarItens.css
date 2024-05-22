@@ -1,42 +1,20 @@
-/* src/components/AdicionarItens.css */
-
-#adicionar-itens {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#adicionar-itens h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-#adicionar-itens label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#adicionar-itens input[type="text"],
-#adicionar-itens textarea {
+#adicionar-itens select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     box-sizing: border-box;
+    background-color: #fff; /* Adicione a cor de fundo desejada */
+    color: #333; /* Adicione a cor do texto desejada */
 }
 
-#adicionar-itens button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #4682b4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+#adicionar-itens select:hover {
+    border-color: #4682b4; /* Adicione a cor desejada ao passar o mouse */
 }
 
-#adicionar-itens button:hover {
-    background-color: #357ebd;
+#adicionar-itens select:focus {
+    outline: none; /* Remover o contorno ao focar */
+    border-color: #357ebd; /* Alterar a cor da borda ao focar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Adicionar uma sombra ao focar */
 }
