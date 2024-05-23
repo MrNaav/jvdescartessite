@@ -13,7 +13,7 @@ const AdicionarItens = () => {
     useEffect(() => {
         const fetchLocalidades = async () => {
             try {
-                const response = await axios.get('http://192.168.1.22:3000/localidades');
+                const response = await axios.get('http://192.168.0.109:3000/localidades');
 
                 const data = response.data;
                 setLocalidades(data);
@@ -29,7 +29,7 @@ const AdicionarItens = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://192.168.1.22:3000/item_descarte', {
+            const response = await axios.post('http://192.168.0.109:3000/item_descarte', {
                 nome,
                 riscos,
                 descricao,
@@ -41,7 +41,7 @@ const AdicionarItens = () => {
 
             const itemId = response.data.id
 
-            const responseTwo = await axios.post('http://192.168.1.22:3000/local_item_descarte', {
+            const responseTwo = await axios.post('http://192.168.0.109:3000/local_item_descarte', {
                 idItemDescarte: itemId,
                 idLocalDescarte: selectedLocalidade,
             });

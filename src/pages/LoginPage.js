@@ -14,7 +14,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
         setErro('');
 
         try {
-            const resposta = await axios.post('http://192.168.1.22:3000/login', {
+            const resposta = await axios.post('http://192.168.0.109:3000/login', {
                 email,
                 senha
             });

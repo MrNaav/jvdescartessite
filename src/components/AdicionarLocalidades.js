@@ -17,7 +17,7 @@ const AdicionarLocalidades = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://192.168.1.22:3000/local_descarte', {
+            const response = await axios.post('http://192.168.0.109:3000/local_descarte', {
                 nome,
                 horario_funcionamento: horarioFuncionamento,
                 rua,

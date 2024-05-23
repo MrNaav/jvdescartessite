@@ -11,7 +11,7 @@ const ResponderContatos = () => {
     useEffect(() => {
         const fetchContatos = async () => {
             try {
-                const response = await axios.get('http://192.168.1.22:3000/contatos_consultoria');
+                const response = await axios.get('http://192.168.0.109:3000/contatos_consultoria');
                 setContatos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar contatos:', error);
@@ -29,7 +29,7 @@ const ResponderContatos = () => {
                 throw new Error('Por favor, selecione um contato e insira uma resposta.');
             }
 
-            const response = await axios.post('http://localhost:3000/resposta_contato', {
+            const response = await axios.post('http://192.168.0.109:3000/resposta_contato', {
                 resposta,
                 contato_consultoria_id: selectedContatoId,
                 consultor_id
