@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './AdicionarItens.css';
+import './AdicionarItens.css'; // Importando o arquivo de estilos CSS
+
 import axios from 'axios';
 
 const AdicionarItens = () => {
@@ -12,7 +13,7 @@ const AdicionarItens = () => {
     useEffect(() => {
         const fetchLocalidades = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/localidades');
+                const response = await axios.get('http://192.168.1.22:3000/localidades');
 
                 const data = response.data;
                 setLocalidades(data);
@@ -28,7 +29,7 @@ const AdicionarItens = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:3000/item_descarte', {
+            const response = await axios.post('http://192.168.1.22:3000/item_descarte', {
                 nome,
                 riscos,
                 descricao,
@@ -40,7 +41,7 @@ const AdicionarItens = () => {
 
             const itemId = response.data.id
 
-            const responseTwo = await axios.post('http://localhost:3000/local_item_descarte', {
+            const responseTwo = await axios.post('http://192.168.1.22:3000/local_item_descarte', {
                 idItemDescarte: itemId,
                 idLocalDescarte: selectedLocalidade,
             });
@@ -62,9 +63,9 @@ const AdicionarItens = () => {
     };
 
     return (
-        <section id="adicionar-itens">
+        <section className="adicionar-itens"> {/* Alterado de id para className */}
             <h2>Adicionar Itens</h2>
-            <form id="form-adicionar-item" onSubmit={handleSubmit}>
+            <form className="form-adicionar-item" onSubmit={handleSubmit}> {/* Alterado de id para className */}
                 <label htmlFor="nome">Nome do Item:</label>
                 <input type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required maxLength="30"/>
                 <label htmlFor="riscos">Riscos do Item:</label>
@@ -72,7 +73,7 @@ const AdicionarItens = () => {
                 <label htmlFor="descricao">Descrição:</label>
                 <textarea id="descricao" name="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} rows="2" required maxLength="200"></textarea>
                 <label htmlFor="localidade">Localidades para Descarte:</label>
-                <select id="localidade" name="localidade" value={selectedLocalidade} onChange={(e) => setSelectedLocalidade(e.target.value)} className="select-css"required>
+                <select id="localidade" name="localidade" value={selectedLocalidade} onChange={(e) => setSelectedLocalidade(e.target.value)} className="select-css" required> {/* Adicionado className */}
                     <option value="">Selecione...</option>
                     {localidades.map(localidade => (
                         <option key={localidade.id} value={localidade.id}>

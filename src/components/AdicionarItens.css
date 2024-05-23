@@ -1,20 +1,20 @@
-#adicionar-itens select {
+.adicionar-itens select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     box-sizing: border-box;
-    background-color: #fff; /* Adicione a cor de fundo desejada */
-    color: #333; /* Adicione a cor do texto desejada */
+    background-color: #fff;
+    color: #333;
 }
 
-#adicionar-itens select:hover {
-    border-color: #4682b4; /* Adicione a cor desejada ao passar o mouse */
+.adicionar-itens select:hover {
+    border-color: #4682b4;
 }
 
-#adicionar-itens select:focus {
-    outline: none; /* Remover o contorno ao focar */
-    border-color: #357ebd; /* Alterar a cor da borda ao focar */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Adicionar uma sombra ao focar */
+.adicionar-itens select:focus {
+    outline: none;
+    border-color: #357ebd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
