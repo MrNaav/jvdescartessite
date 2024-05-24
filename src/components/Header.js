@@ -4,8 +4,8 @@ import './Header.css'; // Vinculando o CSS do Header
 
 const Header = () => {
     return (
-        <header>
-            <h1>JV Descartes</h1>
+        <header className="header">
+            <h1 className="header-title">JV Descartes</h1>
         </header>
     );
 };

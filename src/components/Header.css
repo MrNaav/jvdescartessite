@@ -1,11 +1,12 @@
 /* src/components/Header.css */
-header {
+
+.header {
     background-color: #4682b4; /* Azul-aco */
     color: #fff;
     padding: 20px;
     text-align: center;
 }
 
-h1 {
+.header-title {
     margin: 0;
 }

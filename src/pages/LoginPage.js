@@ -14,7 +14,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
         setErro('');
 
         try {
-            const resposta = await axios.post('http://192.168.0.109:3000/login', {
+            const resposta = await axios.post('http://192.168.1.22:3000/login', {
                 email,
                 senha
             });
@@ -47,6 +47,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    className="input-field"
                 />
                 <label htmlFor="senha">Senha:</label>
                 <input
@@ -55,9 +56,10 @@ const LoginPage = ({ setIsLoggedIn }) => {
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
                     required
+                    className="input-field"
                 />
                 {erro && <p className="error-message">{erro}</p>}
-                <button type="submit" disabled={carregando}>
+                <button type="submit" disabled={carregando} className="submit-button">
                     {carregando ? 'Carregando...' : 'Login'}
                 </button>
             </form>

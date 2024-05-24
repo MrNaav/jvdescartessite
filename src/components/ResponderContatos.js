@@ -1,69 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import './ResponderContatos.css';
-import axios from 'axios';
 
-const ResponderContatos = () => {
-    const [contatos, setContatos] = useState([]);
-    const [selectedContatoId, setSelectedContatoId] = useState('');
-    const [resposta, setResposta] = useState('');
-    const [consultor_id, setConsultorId] = useState('');
+const ResponderContatos = ({ selectedContato, handleSubmit, handleChange, resposta }) => {
+    const [isResponderVisible, setIsResponderVisible] = useState(false);
 
     useEffect(() => {
-        const fetchContatos = async () => {
-            try {
-                const response = await axios.get('http://192.168.0.109:3000/contatos_consultoria');
-                setContatos(response.data);
-            } catch (error) {
-                console.error('Erro ao buscar contatos:', error);
-            }
-        };
-
-        fetchContatos();
-    }, []);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-            if (!selectedContatoId || !resposta) {
-                throw new Error('Por favor, selecione um contato e insira uma resposta.');
-            }
-
-            const response = await axios.post('http://192.168.0.109:3000/resposta_contato', {
-                resposta,
-                contato_consultoria_id: selectedContatoId,
-                consultor_id
-            });
-
-            if (response.status !== 201) {
-                throw new Error('Erro ao responder contato!');
-            }
-
-            alert('Resposta enviada com sucesso!');
-            
-            setResposta('');
-            setSelectedContatoId('');
-        } catch (error) {
-            console.error('Erro:', error);
-            alert('Erro ao responder contato');
+        if (selectedContato) {
+            setIsResponderVisible(true);
         }
+    }, [selectedContato]);
+
+    const handleCancelar = () => {
+        setIsResponderVisible(false);
     };
 
     return (
-        <section id="responder-contatos">
-            <h2>Responder Contatos do Cliente</h2>
-            <form id="form-responder-contato" onSubmit={handleSubmit}>
-                <label htmlFor="contato-select">Selecione o Contato:</label>
-                <select id="contato-select" value={selectedContatoId} onChange={(e) => setSelectedContatoId(e.target.value)} required>
-                    <option value="">Selecione...</option>
-                    {contatos.map(contato => (
-                        <option key={contato.id} value={contato.id}>{contato.nome}</option>
-                    ))}
-                </select>
-                <label htmlFor="resposta">Resposta:</label>
-                <textarea id="resposta" value={resposta} onChange={(e) => setResposta(e.target.value)} rows="4" required maxLength="100"></textarea>
-                <button type="submit">Enviar Resposta</button>
-            </form>
+        <section className="responder-contatos">
+            {isResponderVisible && (
+                <>
+                    <h2>Responder Contatos do Cliente</h2>
+                    <form className="form-responder-contato" onSubmit={handleSubmit}>
+                        <div className="contato-info">
+                            <div className="contato-field">
+                                <label htmlFor="nome">Nome:</label>
+                                <input type="text" id="nome" name="nome" value={selectedContato.nome} readOnly />
+                            </div>
+                            <div className="contato-field">
+                                <label htmlFor="email">Email:</label>
+                                <input type="text" id="email" name="email" value={selectedContato.email} readOnly />
+                            </div>
+                            <div className="contato-field">
+                                <label htmlFor="contato">Contato:</label>
+                                <input type="text" id="contato" name="contato" value={selectedContato.celular} readOnly />
+                            </div>
+                        </div>
+                        <div className="motivo-detalhes">
+                            <div className="contato-field">
+                                <label htmlFor="motivo">Motivo do Contato:</label>
+                                <input type="text" id="motivo" name="motivo" value={selectedContato.motivo} readOnly />
+                            </div>
+                            <div className="contato-field">
+                                <label htmlFor="detalhes">Detalhes:</label>
+                                <textarea id="detalhes" name="detalhes" value={selectedContato.detalhes} readOnly></textarea>
+                            </div>
+                        </div>
+                        <label htmlFor="resposta">Resposta:</label>
+                        <textarea id="resposta" value={resposta} onChange={handleChange} rows="4" required maxLength="100"></textarea>
+                        <button type="submit">Enviar Resposta</button>
+                        <button type="button" onClick={handleCancelar}>Cancelar</button>
+                    </form>
+                </>
+            )}
         </section>
     );
 };

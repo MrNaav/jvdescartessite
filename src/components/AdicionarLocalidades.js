@@ -13,11 +13,18 @@ const AdicionarLocalidades = () => {
     const [estado, setEstadoNome] = useState(''); 
     const [pais, setPaisNome] = useState(''); 
 
+    const handleInputChange = (e, setStateFunction, maxLength) => {
+        const inputValue = e.target.value;
+        if (inputValue.length <= maxLength) {
+            setStateFunction(inputValue);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://192.168.0.109:3000/local_descarte', {
+            const response = await axios.post('http://192.168.1.22:3000/local_descarte', {
                 nome,
                 horario_funcionamento: horarioFuncionamento,
                 rua,
@@ -51,27 +58,53 @@ const AdicionarLocalidades = () => {
     };
 
     return (
-        <section id="adicionar-localidades">
+        <section className="adicionar-localidades">
             <h2>Adicionar Localidade</h2>
-            <form id="form-adicionar-localidade" onSubmit={handleSubmit}>
-                <label htmlFor="nome">Nome do Local de Descarte:</label>
-                <input type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required maxLength="50"/>
-                <label htmlFor="horarioFuncionamento">Horário de Funcionamento:</label>
-                <input type="text" id="horarioFuncionamento" name="horarioFuncionamento" value={horarioFuncionamento} onChange={(e) => setHorarioFuncionamento(e.target.value)} required maxLength="50"/>
-                <label htmlFor="rua">Rua:</label>
-                <input type="text" id="rua" name="rua" value={rua} onChange={(e) => setRua(e.target.value)} required maxLength="30"/>
-                <label htmlFor="numero">Número:</label>
-                <input type="text" id="numero" name="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required />
-                <label htmlFor="complemento">Complemento:</label>
-                <input type="text" id="complemento" name="complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)} maxLength="20"/>
-                <label htmlFor="bairro">Bairro:</label>
-                <input type="text" id="bairro" name="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required maxLength="50"/> 
-                <label htmlFor="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required maxLength="30"/>
-                <label htmlFor="estado">Estado:</label>
-                <input type="text" id="estado" name="estado" value={estado} onChange={(e) => setEstadoNome(e.target.value)} required maxLength="30"/> 
-                <label htmlFor="pais">País:</label>
-                <input type="text" id="pais" name="pais" value={pais} onChange={(e) => setPaisNome(e.target.value)} required maxLength="30"/> 
+            <form className="form-adicionar-localidade" onSubmit={handleSubmit}>
+                <div className="input-row">
+                    <div className="input-group">
+                        <label htmlFor="nome">Nome do Local de Descarte:</label>
+                        <input type="text" id="nome" name="nome" value={nome} onChange={(e) => handleInputChange(e, setNome, 50)} required maxLength="50"/>
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="horarioFuncionamento">Horário de Funcionamento:</label>
+                        <input type="text" id="horarioFuncionamento" name="horarioFuncionamento" value={horarioFuncionamento} onChange={(e) => handleInputChange(e, setHorarioFuncionamento, 50)} required maxLength="50"/>
+                    </div>
+                </div>
+                <div className="input-row">
+                    <div className="input-group">
+                        <label htmlFor="rua">Rua:</label>
+                        <input type="text" id="rua" name="rua" value={rua} onChange={(e) => handleInputChange(e, setRua, 30)} required maxLength="30"/>
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="numero">Número:</label>
+                        <input type="text" id="numero" name="numero" value={numero} onChange={(e) => handleInputChange(e, setNumero, 10)} required maxLength="5"/>
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="complemento">Complemento:</label>
+                        <input type="text" id="complemento" name="complemento" value={complemento} onChange={(e) => handleInputChange(e, setComplemento, 20)} maxLength="20"/>
+                    </div>
+                </div>
+                <div className="input-row">
+                    <div className="input-group" style={{width: "60%"}}>
+                        <label htmlFor="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" value={bairro} onChange={(e) => handleInputChange(e, setBairro, 50)} required maxLength="50"/> 
+                    </div>
+                    <div className="input-group" style={{width: "20%"}}>
+                        <label htmlFor="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" value={cidade} onChange={(e) => handleInputChange(e, setCidade, 30)} required maxLength="30"/>
+                    </div>
+                </div>
+                <div className="input-row">
+                    <div className="input-group">
+                        <label htmlFor="estado">Estado:</label>
+                        <input type="text" id="estado" name="estado" value={estado} onChange={(e) => handleInputChange(e, setEstadoNome, 30)} required maxLength="30"/> 
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="pais">País:</label>
+                        <input type="text" id="pais" name="pais" value={pais} onChange={(e) => handleInputChange(e, setPaisNome, 30)} required maxLength="30"/> 
+                    </div>
+                </div>
                 <button type="submit">Adicionar</button>
             </form>
         </section>

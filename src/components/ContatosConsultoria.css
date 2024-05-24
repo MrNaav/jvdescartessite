@@ -1,21 +1,29 @@
-/* ConsultaContatos.css */
-
-#consulta-contatos {
+.consulta-contatos {
     margin-top: 20px;
 }
 
+/* ContatosConsultoria.css */
+
 .contatos-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Define 3 colunas com a largura igual */
+    gap: 20px; /* Espaçamento entre os blocos */
 }
 
 .contato-item {
-    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    padding: 20px;
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
-    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+
+.contato-item:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.contato-item:nth-child(3n) {
+    margin-right: 0;
 }
 
 .contato-item p {

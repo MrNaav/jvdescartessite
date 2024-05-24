@@ -15,17 +15,17 @@
     justify-content: center; /* Para centralizar verticalmente */
 }
 
-.nav-bar ul {
+.nav-links {
     list-style-type: none;
     padding: 0;
     margin-top: 20px; /* Ajuste o espaçamento acima dos atalhos */
 }
 
-.nav-bar li {
+.nav-links li {
     margin-bottom: 20px; /* Ajuste o espaçamento entre os atalhos */
 }
 
-.nav-bar a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -34,7 +34,12 @@
     text-align: center; /* Centralize os textos dos atalhos */
 }
 
-.nav-bar a:hover {
+.nav-links a:hover {
+    background-color: #357ebd; /* Azul-aco mais escuro */
+    border-radius: 5px;
+}
+
+.active-link {
     background-color: #357ebd; /* Azul-aco mais escuro */
     border-radius: 5px;
 }

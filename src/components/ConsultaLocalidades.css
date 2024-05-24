@@ -1,6 +1,4 @@
-/* src/components/ConsultaLocalidades.css */
-
-#consulta-localidades {
+.consulta-localidades {
     margin-top: 20px;
     background-color: #fff;
     padding: 20px;
@@ -8,42 +6,65 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#consulta-localidades h2 {
+.consulta-localidades h2 {
     margin-top: 0;
     color: #4682b4; /* Azul-aco */
 }
 
-#form-consulta-localidade {
+.form-consulta-localidade {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-#form-consulta-localidade label {
+.form-consulta-localidade label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-#form-consulta-localidade select {
+.form-consulta-localidade select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
+    max-width: 100%; /* Adicionado para garantir que o campo seleção tenha a largura máxima */
 }
 
-#localidade-info {
+
+.localidade-info {
     margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
     background-color: #f0f8ff; /* Azul claro */
 }
 
-#localidade-info h3 {
+.localidade-info h3 {
     margin-top: 0;
     color: #4682b4; /* Azul-aco */
 }
 
-#localidade-info p {
+.localidade-info p {
     margin: 10px 0;
+}
+
+/* Adicione ao arquivo ConsultaLocalidades.css */
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.delete-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff6347; /* Cor vermelha */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff483b; /* Tom mais escuro de vermelho */
 }
