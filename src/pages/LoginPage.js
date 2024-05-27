@@ -23,9 +23,11 @@ const LoginPage = ({ setIsLoggedIn }) => {
 
             localStorage.setItem('token', token);
             setIsLoggedIn(true);
-            window.location.href = '/itens';
+
+            window.location.href = '/Home';
         } catch (erro) {
             console.error('Erro ao fazer login:', erro);
+            
             if (erro.response && erro.response.status === 401) {
                 setErro('Credenciais inválidas');
             } else {
@@ -39,7 +41,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
     return (
         <div className="login-container">
             <form className="login-form" onSubmit={handleLogin}>
-                <h2>Login</h2>
+                <h2>Login Consultor</h2>
                 <label htmlFor="email">Email:</label>
                 <input
                     type="email"

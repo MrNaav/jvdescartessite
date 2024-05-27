@@ -1,8 +1,8 @@
-// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import './App.css';
+import ItensPage from './pages/ItensPage';
 import LocalidadesPage from './pages/LocalidadesPage';
 import ContatosClientesPage from './pages/ContatosClientesPage';
 import LoginPage from './pages/LoginPage';
@@ -24,10 +24,18 @@ const App = () => {
                 <Routes>
                     <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
                     <Route
-                        path="/itens"
+                        path="/Home"
                         element={
                             <PrivateRoute>
                                 <HomePage />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/itens"
+                        element={
+                            <PrivateRoute>
+                                <ItensPage />
                             </PrivateRoute>
                         }
                     />

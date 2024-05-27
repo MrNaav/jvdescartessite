@@ -1,0 +1,132 @@
+.section-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #4FD271;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.label-container {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-container,
+.textarea-container,
+.adicionar-itens .select-container,
+.consulta-itens .select-container {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #D0D4CD; 
+    color: #000000;
+    font-family: Arial;
+}
+
+.button-container,
+.confirm-button,
+.cancel-button,
+.delete-button,
+.edit-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #203555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-container:hover,
+.confirm-button:hover,
+.cancel-button:hover,
+.delete-button:hover,
+.edit-button:hover {
+    background-color: #000000;
+}
+
+.adicionar-itens .select-container,
+.consulta-itens .select-container {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #D0D4CD;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #D0D4CD;
+    color: #000000;
+}
+
+.adicionar-itens .select-container,
+.consulta-itens .select-container {
+    border-color: #000000;
+}
+
+.adicionar-itens .select-container:focus,
+.consulta-itens .select-container:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.item-info {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #D0D4CD;
+}
+
+.item-info h3 {
+    margin-top: 0;
+    color: #000000; 
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.confirm-button,
+.cancel-button,
+.delete-button,
+.edit-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #203555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.confirm-button,
+.cancel-button,
+.delete-button,
+.edit-button {
+    background-color: #203555;
+}
+
+.button-group .cancel-button {
+    background-color: #c0392b;
+}
+
+.button-group .cancel-button:hover {
+    background-color: #962d22;
+}
+
+.localidade-item {
+    border: 1px solid #000000;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+}

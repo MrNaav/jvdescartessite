@@ -1,54 +1,179 @@
-.page {
-    display: flex;
-}
-
-.content {
-    margin-left: 200px; /* Largura da NavBar */
-    padding: 20px;
-    flex: 1;
-}
-
-main {
-    padding: 20px;
-}
-
-.section {
+.adicionar-localidades {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #4FD271;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.section h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
+.form-adicionar-localidade {
+    display: flex;
+    flex-direction: column;
 }
 
-.label {
-    display: block;
-    margin-bottom: 5px;
+.form-adicionar-localidade label {
+    margin-top: 10px;
 }
 
-.input-text,
-.textarea {
+.form-adicionar-localidade input,
+.form-adicionar-localidade select,
+.form-adicionar-localidade textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     margin-bottom: 10px;
     box-sizing: border-box;
+    background-color: #D0D4CD; 
+    color: #000000;
+    font-family: Arial;
 }
 
-.button {
+.form-adicionar-localidade input:focus,
+.form-adicionar-localidade select:focus,
+.form-adicionar-localidade textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.form-adicionar-localidade button {
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #4682b4;
+    background-color: #203555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form-adicionar-localidade button:hover {
+    background-color: #000000;
+}
+
+.button-container {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #203555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-container:hover {
+    background-color: #000000;
+}
+
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1 1 auto;
+    margin-bottom: 5px; 
+}
+
+.input-group input {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.input-group#rua {
+    flex-basis: calc(60% - 20px); 
+}
+
+.input-group#numero {
+    flex-basis: calc(20% - 10px); 
+}
+
+.input-group#complemento {
+    flex-basis: calc(30% - 15px);
+}
+
+.input-group.bairro input {
+    width: calc(60% - 10px); 
+}
+
+.input-group.cidade input,
+.input-group.estado input,
+.input-group.pais input {
+    width: calc(20% - 5px); 
+}
+.consulta-localidades {
+    margin-top: 20px;
+    background-color: #4FD271;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.consulta-localidades h2 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.form-consulta-localidade {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-consulta-localidade label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-consulta-localidade select {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+.localidade-info {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #D0D4CD; 
+}
+
+.localidade-info h3 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.localidade-info p {
+    margin: 10px 0;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.localidade-select {
+    background-color: #D0D4CD; 
+}
+
+.delete-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: red; 
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
-.button:hover {
-    background-color: #357ebd;
+.delete-button:hover {
+    background-color: #740901; 
 }

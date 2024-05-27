@@ -1,7 +1,6 @@
-/* src/components/Header.css */
-
 .header {
-    background-color: #4682b4; /* Azul-aco */
+    background-color: #203555;
+    font-size: 23px;
     color: #fff;
     padding: 20px;
     text-align: center;

@@ -1,45 +1,59 @@
-/* src/components/NavBar.css */
-
 .nav-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 200px;
     height: 100%;
-    background-color: #4682b4; /* Azul-aco */
+    background-color: #203555; 
     padding-top: 20px;
-    padding-bottom: 20px; /* Adicionando padding abaixo dos atalhos */
+    padding-bottom: 20px; 
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    display: flex; /* Para centralizar verticalmente */
-    flex-direction: column; /* Para centralizar verticalmente */
-    justify-content: center; /* Para centralizar verticalmente */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
 }
 
 .nav-links {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px; /* Ajuste o espaçamento acima dos atalhos */
+    margin-top: 20px; 
 }
 
 .nav-links li {
-    margin-bottom: 20px; /* Ajuste o espaçamento entre os atalhos */
+    margin-bottom: 20px; 
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px 20px;
     display: block;
-    text-align: center; /* Centralize os textos dos atalhos */
+    text-align: center; 
 }
 
 .nav-links a:hover {
-    background-color: #357ebd; /* Azul-aco mais escuro */
-    border-radius: 5px;
+    background-color: #357ebd; 
+    border-radius: 10px;
 }
 
 .active-link {
-    background-color: #357ebd; /* Azul-aco mais escuro */
+    background-color: #357ebd; 
     border-radius: 5px;
+}
+
+.button-group {
+    background-color: #203555;
+    text-decoration: none;
+    color: #fff;
+    border-color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    display: block;
+    text-align: center; 
+    cursor: pointer;
+}
+
+.button-group:hover{
+    background-color: #000000;
 }

@@ -1,56 +1,24 @@
-/* src/pages/HomePage.css */
-
-.page {
+.company-section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.content {
-    margin-left: 200px; /* Largura da NavBar */
-    padding: 20px;
-    flex: 1;
-}
-
-main {
-    padding: 20px;
-}
-
-.section-container {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.section-container h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.label-container {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.input-container[type="text"],
-.textarea-container {
+.company-image {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-.button-container {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #4682b4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.company-description {
+    text-align: center;
 }
 
-.button-container:hover {
-    background-color: #357ebd;
+.company-description h2 {
+    margin-top: 20px;
+}
+
+.company-description p, .company-description ul {
+    margin-top: 10px;
 }

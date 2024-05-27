@@ -4,15 +4,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2a7464;
+    background-color: #203555;
 }
 
 .login-form {
     width: 300px;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 40px;
+    border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    background-color: #4FD271;
 }
 
 .login-form h2 {
@@ -23,21 +23,22 @@
 
 .login-form label {
     display: block;
-    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .input-field {
     width: 100%;
     padding: 8px;
+    background-color: #D0D4CD;
     margin-bottom: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 4px;
 }
 
 .submit-button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #203555;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -45,11 +46,13 @@
 }
 
 .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #000000;
 }
 
 .error-message {
     color: red;
+    font-weight: bold;
+    text-align: center;
     margin-top: 8px;
     margin-bottom: 0;
 }

@@ -1,55 +1,109 @@
-.page {
-    display: flex;
-}
-
 .content {
-    margin-left: 200px; /* Largura da NavBar */
+    margin-left: 200px; 
     padding: 20px;
     flex: 1;
 }
 
-main {
-    padding: 20px;
-}
-
-.section {
-    margin-bottom: 20px;
-    padding: 20px;
+.responder-contatos {
     border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #4FD271;
+    padding: 20px;
+}
+.contato-info {
+    display: flex;
+    justify-content: space-between;
 }
 
-.section h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
+.contato-field {
+    flex: 0 0 32%;
 }
 
-.label {
+.label-container {
     display: block;
     margin-bottom: 5px;
 }
 
-.input-text,
-.textarea,
-.select {
+.form-responder-contato label {
+    font-weight: bold;
+}
+
+.form-responder-contato textarea {
+    padding: 5px;
+    border: 1px solid #D0D4CD;
+    border-radius: 5px;
+    resize: none; 
+}
+
+.form-responder-contato button {
+    padding: 8px 15px;
+    background-color: #203555;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.campo {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     margin-bottom: 10px;
     box-sizing: border-box;
+    background-color: #D0D4CD; 
+    color: #000000;
+    font-family: Arial;
+}
+
+.consulta-contatos {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #4FD271;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contatos-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    padding: 20px;
+    gap: 20px; 
+}
+
+.contato-item {
+    background-color: #D0D4CD;
+    border: 1px solid #000000;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contato-item:hover {
+    background-color: #948f8f;
+}
+
+.contato-item:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.contato-item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.contato-item p {
+    margin: 5px 0;
+}
+
+.contato-item p:first-child {
+    font-weight: bold;
 }
 
 .button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #4682b4;
-    color: #fff;
-    border: none;
-    cursor: pointer; /* Adicionado aqui */
+    background-color: #203555;
 }
 
 .button:hover {
-    background-color: #357ebd;
+    background-color: #000000;
 }
+
